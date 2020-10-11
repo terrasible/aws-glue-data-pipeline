@@ -1,6 +1,6 @@
 variable "profile" {
   description = "Name the profile for setting up Notebook instance"
-  default     = "cc-sandbox"
+  default     = ""
 }
 
 variable "region" {
@@ -10,12 +10,12 @@ variable "region" {
 
 variable "name" {
   description = "Name the NoteBook-Jupyter"
-  default     = "test-jupyter-bio"
+  default     = "test-jupyter"
 }
 
 variable "rolearn" {
   description = "Role for NoteBook-Jupyter"
-  default     = "arn:aws:iam::626505363333:role/Sagemaker-full-access"
+  default     = ""
 }
 
 variable "instType" {
