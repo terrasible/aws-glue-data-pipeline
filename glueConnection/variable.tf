@@ -5,7 +5,7 @@ variable "profile" {
 
 variable "region" {
   description = "Name the region for setting up crawler"
-  default     = "ap-southeast-1"
+  default     = ""
 }
 
 variable "name" {
