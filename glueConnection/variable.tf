@@ -1,6 +1,6 @@
 variable "profile" {
   description = "Name the profile for setting up crawler"
-  default     = "cc-sandbox"
+  default     = ""
 }
 
 variable "region" {
