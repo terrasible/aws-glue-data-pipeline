@@ -1,6 +1,6 @@
 variable "profile" {
   description = "Name the profile for setting up IAM group"
-  default     = "cc-sandbox"
+  default     = ""
 }
 
 variable "region" {
@@ -31,16 +31,16 @@ variable "psiamronly" {
 variable "groups" {
   description = "Create IAM Groups with these names"
   type        = list(string)
-  default     = ["admin", "managers", "dataengineers", "datascientists", "App_Devlopment"]
+  default     = [ "managers", "App_Devlopment"]
 }
 
 variable "policy" {
   description = "Create IAM users with these names"
   type        = list(string)
-  default     = ["admin", "dataengineers"]
+  default     = ["admin"]
 }
 
 variable "env" {
   description = "Name the env"
-  default     = "prod"
+  default     = "dev"
 }
