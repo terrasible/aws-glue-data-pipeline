@@ -2,11 +2,6 @@
  * Jupyter-Notebook
  */
 
-provider "aws" {
-  region                  = var.region
-  shared_credentials_file = "/Users/tf_user/.aws/creds"
-  profile                 = var.profile
-}
 
 resource "aws_sagemaker_notebook_instance" "Bio" {
   name          = var.name

@@ -8,17 +8,17 @@ provider "aws" {
 }
 
 resource "aws_glue_job" "bio-glue" {
-  count       = length(var.name) > 0 ? length(var.name) : 0
-  name        = var.name[count.index]
-  role_arn    = var.rolearn
+  count        = length(var.name) > 0 ? length(var.name) : 0
+  name         = var.name[count.index]
+  role_arn     = var.rolearn
   glue_version = var.GlueVersion
 
 
 
   command {
-    name            = "${var.cmdName[count.index]}"
+    name            = var.cmdName[count.index]
     script_location = "s3://${var.sourceBucket}/${var.filepath[count.index]}"
-    python_version   = "${var.PythonVersion[count.index]}"
+    python_version  = var.PythonVersion[count.index]
   }
 
   default_arguments = {
@@ -39,16 +39,16 @@ resource "aws_glue_job" "bio-glue" {
 }
 
 resource "aws_glue_job" "bio-rds-glue" {
-  count       = length(var.rdsname) > 0 ? length(var.rdsname) : 0
-  name        = var.rdsname[count.index]
-  role_arn    = var.rolearn
+  count        = length(var.rdsname) > 0 ? length(var.rdsname) : 0
+  name         = var.rdsname[count.index]
+  role_arn     = var.rolearn
   glue_version = var.GlueVersion
-  connections = var.connections
+  connections  = var.connections
 
   command {
-    name            = "${var.rdscmdName[count.index]}"
+    name            = var.rdscmdName[count.index]
     script_location = "s3://${var.sourceBucket}/${var.rdsfilepath[count.index]}"
-    python_version   = "${var.rdsPythonVersion[count.index]}"
+    python_version  = var.rdsPythonVersion[count.index]
   }
 
   default_arguments = {

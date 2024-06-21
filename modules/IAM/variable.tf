@@ -31,7 +31,7 @@ variable "psiamronly" {
 variable "groups" {
   description = "Create IAM Groups with these names"
   type        = list(string)
-  default     = [ "managers", "App_Devlopment"]
+  default     = ["managers", "App_Devlopment"]
 }
 
 variable "policy" {

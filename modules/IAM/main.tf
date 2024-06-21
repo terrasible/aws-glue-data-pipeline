@@ -61,4 +61,3 @@ resource "aws_iam_group_policy_attachment" "attach-dev-iamRO" {
   group      = var.groups[count.index + 2]
   policy_arn = aws_iam_policy.deviamronly.arn
 }
-

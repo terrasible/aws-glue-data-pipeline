@@ -34,7 +34,7 @@ EOF
 resource "aws_iam_policy" "full_access" {
   name        = var.policyName
   description = "full-access over s3 athena crawler glue rds"
-  policy      = file("../modules/glueCrowler/policy.json")
+  policy      = file("${path.module}/policy.json")
 }
 
 resource "aws_iam_role_policy_attachment" "policy_attach" {

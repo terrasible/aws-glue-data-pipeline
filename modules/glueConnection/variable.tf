@@ -9,7 +9,7 @@ variable "region" {
 }
 
 variable "name" {
-  description = "Name the name"
+  description = "Name of the Glue connection"
   default     = ""
 }
 

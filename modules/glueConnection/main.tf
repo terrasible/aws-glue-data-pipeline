@@ -1,8 +1,3 @@
-provider "aws" {
-  region  = var.region
-  profile = var.profile
-}
-
 resource "aws_glue_connection" "connection" {
   connection_properties = {
     JDBC_CONNECTION_URL = var.JDBC_CONNECTION_URL
